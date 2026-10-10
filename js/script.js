@@ -1,4 +1,6 @@
 let container = document.getElementById('heros-container')
+let searchInput = document.getElementById('search_input')
+let searchButton = document.getElementById('search_button')
 
 const TOKEN = '3b72ec6fb6b7af1077fea181742ddc93'
 
@@ -8,13 +10,15 @@ function buscarHeroi(nomeBusca){
         .then((data) =>{
             console.log(data)
 
+            container.innerHTML = ''
+
             if (data.response === 'success'){
                 data.results.forEach(element =>{
                     const card = document.createElement('div')
 
                     card.className = 'card'
 
-                    const imagemUrl = `https://images.weserv.nl/?url=${encodeURIComponent(element.image.url)}`
+                    const imagemUrl = `https://images.weserv.nl/?url=${encodeURIComponent(element.image.url)}&w=300&h=400&fit=cover`
 
                     card.innerHTML = `
                         <img src='${imagemUrl}'/>
@@ -34,6 +38,13 @@ function buscarHeroi(nomeBusca){
         })
 }
 
+searchButton.addEventListener('click', () => {
+    let termo = searchInput.value.trim();
+    if (termo !== "") {
+        buscarHeroi(termo);
+    }
+});
+
 window.addEventListener('DOMContentLoaded', () =>{
-    buscarHeroi('man');
+    buscarHeroi('Batman');
 })
