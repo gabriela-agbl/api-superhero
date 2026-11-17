@@ -2,6 +2,8 @@
 
 Aplicação web estática em **HTML5, CSS3 e JavaScript puro** para consulta interativa de super-heróis, com consumo dinâmico da [SuperHero API](https://superheroapi.com). Projeto desenvolvido para a atividade prática de **Web Development Front-End**.
 
+![Print da tela](./images/superhero.png)
+
 ## 📚 Documentação teórica
 
 A parte teórica do trabalho (o que é API, DOM, funções usadas, escolha da API e regras de acesso) está em:
